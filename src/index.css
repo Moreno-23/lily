@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-ivory: #FFF9F0;
+  --color-blush-pink: #F4DCE0;
+  --color-dusty-rose: #C98996;
+  --color-burgundy: #672F43;
+  --color-sage-green: #A6B59A;
+  --color-champagne-gold: #D8B978;
+  --color-chocolate-brown: #493126;
+
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Great Vibes', 'Alex Brush', cursive;
+  --font-handwriting: 'Caveat', cursive;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF9F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C98996;
+  border-radius: 9999px;
+  border: 2px solid #FFF9F0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #672F43;
+}
+
+/* Native dialog styles conforming to modern web guidance */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgba(73, 49, 38, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Botanical and fairytale ambient animations */
+@keyframes float-petal {
+  0% {
+    transform: translateY(-10px) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes gentle-sway {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer-gold {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-petal {
+  animation: float-petal 12s linear infinite;
+}
+
+.animate-gentle-sway {
+  animation: gentle-sway 4s ease-in-out infinite;
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+.shimmer-gold-text {
+  background: linear-gradient(90deg, #D8B978 0%, #FFF9F0 50%, #D8B978 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer-gold 6s ease-in-out infinite;
+}
+
+/* Paper texture helper */
+.paper-texture {
+  background-color: #FFF9F0;
+  background-image: radial-gradient(#672F43 0.4px, transparent 0.4px), radial-gradient(#672F43 0.4px, #FFF9F0 0.4px);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  opacity: 0.98;
+}
